@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miniBOB UI</title>
+    <script type="module">
+        import { LoadMiniBobUI, button, label, link } from './ui/index.js';
+        LoadMiniBobUI(button, label, link);
+    </script>
+    <style>
+        body {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            width: 50%;
+            background: #ccc;
+            padding: 20px;
+            position: relative;
+            margin-top: 40px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset legend {
+            background: #ccc;
+            padding: 10px;
+            font-weight: bold;
+            position: absolute;
+            left: -1px;
+            top: -20px;
+        }
+
+        label {
+            width: 50px;
+            display: inline-block;
+        }
+
+        details {
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            padding: 0.5em 0.5em 0;
+            margin: 10px auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        summary {
+            font-weight: bold;
+            margin: -0.5em -0.5em 0;
+            padding: 0.5em;
+            cursor: pointer;
+        }
+
+        summary * {
+            display: inline-block;
+        }
+
+        details[open] {
+            padding: 0.5em;
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #aaa;
+            margin-bottom: 0.5em;
+        }
+
+        code {
+            margin: 10px auto;
+            padding: 10px;
+            background: beige;
+            line-height: 2em;
+            display: block;
+            border-radius: 2px;
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+
+        miniminibob-button {
+            display: inline-block;
+        }
+
+        h2,
+        .clip-text {
+            font-size: 80px;
+            font-weight: 100;
+            line-height: 1;
+            font-family: Inter, sans-serif;
+            text-align: center;
+            color: transparent;
+            /* Color fallback */
+            /* background: linear-gradient(180deg, #fff, #aaa), #fff; */
+            background: linear-gradient(180deg, #c690d6, #ff6511), #fff;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        minibob-button {
+            width: 202px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>MiniBOB UI</h2>
+
+    Usage
+    <code>
+        import { LoadMiniBobUI, button, label, link } from './ui/index.js';
+    </code>
+
+    <code>
+        LoadMiniBobUI(button, label, link);
+    </code>
+
+    <details open>
+        <summary>
+            Button
+        </summary>
+        <minibob-button>Standard</minibob-button>
+        <code>
+            &ltminibob-button&gtStandard&lt/minibob-button&gt
+        </code>
+        <minibob-button type="Primary">Primary</minibob-button>
+        <code>
+            &ltminibob-button type="Primary"&gtPrimary&lt/minibob-button&gt
+        </code>
+
+        <minibob-button type="Warning">Warning</minibob-button>
+
+        <code>
+            &ltminibob-button type="Warning"&gtWarning&lt/minibob-button&gt
+        </code>
+
+        <minibob-button radius="None">None Radius</minibob-button>
+
+        <code>
+            &ltminibob-button radius="None"&gtNone Radius&lt/minibob-button&gt
+        </code>
+
+        <minibob-button type="dino">Dino</minibob-button>
+
+        <p>
+            <b>R</b> Restart
+        </p>
+
+        <p>
+            <b>J</b> Jump
+        </p>
+
+        <p>
+            <b>P</b> Pause
+        </p>
+
+        <code>
+            &ltminibob-button type="dino"&gtDino&lt/minibob-button&gt
+        </code>
+    </details>
+
+    <details open>
+        <summary>
+            Label
+        </summary>
+        <minibob-label>I'm a Label</minibob-label>
+        <code>
+                &ltminibob-label&gtI'm a Label&lt/minibob-label&gt
+            </code>
+
+        <minibob-label disabled="true">I'm a disabled Label</minibob-label>
+        <code>
+                &ltminibob-label disabled="true"&gtI'm a disabled Label&lt/minibob-label&gt
+            </code>
+        <minibob-label required="true">I'm a required Label</minibob-label>
+        <code>
+                &ltminibob-label required="true"&gtI'm a required Label&lt/minibob-label&gt
+        </code>
+    </details>
+
+    <details open>
+        <summary>
+            Link
+        </summary>
+        <minibob-link url="https://github.com">I'm a Link</minibob-link>
+        <code>
+            &ltminibob-link url="https://github.com"&gtI'm a Link&lt/minibob-link&gt
+        </code>
+        <minibob-link url="https://github.com" color="#000">I'm a Link</minibob-link>
+        <code>
+            &ltminibob-link url="https://github.com" color="#000"&gtI'm a Link&lt/minibob-link&gt
+        </code>
+        <minibob-link url="https://github.com" color="#000" size="30">I'm a Link (big size)</minibob-link>
+        <code>
+            &ltminibob-link url="https://github.com" color="#000" size="30"&gtI'm a Link (big size)&lt/minibob-link&gt
+        </code>
+        <minibob-link url="https://github.com" color="#000" underline="false">I'm a Link</minibob-link>
+        <code>
+            &ltminibob-link url="https://github.com" color="#000" underline="false"&gtI'm a Link&lt/minibob-link&gt
+        </code>
+        <minibob-link url="https://github.com" color="#000" underline="false" hover-underline="false">I'm a
+            Link</minibob-link>
+        <code>
+            &ltminibob-link url="https://github.com" color="#000" underline="false" hover-underline="false"&gtI'm a Link&lt/minibob-link&gt
+        </code>
+        <minibob-link url="https://github.com" disabled="true">I'm a disabled
+            Link</minibob-link>
+        <code>
+            &ltminibob-link url="https://github.com" disabled="true"&gtI'm a disabled Link&lt/minibob-link&gt
+        </code>
+    </details>
+</body>
+
+</html>
